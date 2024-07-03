@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 10a</title>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+      button {
+        border: none;
+
+        font-weight: bold;
+      }
+      .cart-button {
+        background-color: rgb(255, 216, 20);
+        color: black;
+        padding: 10px 40px;
+        font-size: 15px;
+        border-radius: 20px;
+      }
+      .request-button {
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .schedule-button {
+        background-color: rgb(230, 230, 230);
+        color: black;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+      .gaming-button {
+        background-color: rgb(230, 230, 230);
+        color: black;
+        padding: 15px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .triggerd-button {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="cart-button">Add to Cart</button>
+    <p>Uber buttons</p>
+    <button class="request-button">Request now</button>
+    <button class="schedule-button">Schedule for later</button>
+    <p>10c</p>
+    <button class="js-button">Test</button>
+    <button
+      class="js-gaming-button gaming-button"
+      onclick="trigger('js-gaming-button');"
+    >
+      Gaming
+    </button>
+    <button
+      class="js-Music-button gaming-button"
+      onclick="trigger('js-Music-button');"
+    >
+      Music
+    </button>
+    <button
+      class="js-Tech-button gaming-button"
+      onclick="trigger('js-Tech-button');"
+    >
+      Tech
+    </button>
+
+    <script>
+      const tick = document.querySelector(".js-button");
+      console.log(tick.classList.contains("js-button"));
+
+      function trigger(button) {
+        let bton = document.querySelector(`.${button}`);
+        if (!bton.classList.contains("triggerd-button"))
+          bton.classList.add("triggerd-button");
+        else bton.classList.remove("triggerd-button");
+      }
+    </script>
+  </body>
+</html>

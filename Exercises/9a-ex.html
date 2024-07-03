@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9</title>
+  </head>
+  <body>
+    <!--  (9a,9b)
+    
+    <button class="js-9a">9a</button>
+    <button class="js-9b">9b</button>
+    
+    -->
+
+    <button onclick="choiceMake('heads');">heads</button>
+    <button onclick="choiceMake('tails');">tails</button>
+    <p class="js-choice"></p>
+
+    <script>
+      /*  (9a,9b)
+      console.log(document.querySelector(".js-9a").innerHTML);
+      document.querySelector(".js-9b").innerHTML = "9b done!";
+      */
+
+      function choiceMake(choice) {
+        document.querySelector(
+          ".js-choice"
+        ).innerHTML = `You choose : ${choice}`;
+      }
+    </script>
+  </body>
+</html>

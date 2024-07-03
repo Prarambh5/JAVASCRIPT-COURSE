@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8h exercise</title>
+  </head>
+  <body>
+    <button
+      onclick="
+    performCalculation('1');
+  "
+    >
+      1
+    </button>
+
+    <button
+      onclick="
+  performCalculation('2');
+  "
+    >
+      2
+    </button>
+
+    <button
+      onclick="
+  performCalculation('3');
+  "
+    >
+      3
+    </button>
+
+    <button
+      onclick="
+  performCalculation(' + ');
+  "
+    >
+      +
+    </button>
+
+    <button
+      onclick="
+    // Note: eval() takes a string and runs it as code.
+    // Avoid using eval() in real world projects since
+    // it can potentially be given harmful code to run.
+    // Only use eval() for learning purposes.
+    calculation = eval(calculation);
+    localStorage.setItem('result',calculation);
+    console.log(calculation);
+  "
+    >
+      =
+    </button>
+
+    <button
+      onclick="
+      calculation = '';
+      localStorage.setItem('result' , calculation);
+      "
+    >
+      clear
+    </button>
+
+    <script>
+      let calculation = localStorage.getItem("result");
+
+      function performCalculation(symbol) {
+        calculation += symbol;
+        console.log(calculation);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LengthConverter</title>
+  </head>
+  <body>
+    <script>
+      function convertLength(length, from, to) {
+        if (from !== "km" && from !== "miles" && from !== "feet") {
+          console.log(`invalid unit : ${from}`);
+          return;
+        }
+        if (to !== "km" && to !== "miles" && to !== "feet") {
+          console.log(`invalid unit : ${to}`);
+          return;
+        }
+        if (to === "km") {
+          if (from === "feet") return length / 3281;
+          else return length / 5280;
+        } else if (to === "miles") {
+          if (from === "km") return length / 1.6;
+          else return length / 5280;
+        } else {
+          if (from === "km") return length * 3281;
+          else return length * 5280;
+        }
+      }
+
+      console.log(convertLength(500, "km", "miles"));
+      console.log(convertLength(500, "km", "feet"));
+      console.log(convertLength(86969, "feet", "km"));
+      console.log(convertLength(86969, "feet", "miles"));
+      console.log(convertLength(33434, "km", "watt"));
+    </script>
+  </body>
+</html>

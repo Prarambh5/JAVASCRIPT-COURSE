@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 8</title>
+  </head>
+  <body>
+    <button
+      onclick="
+        eval('heads');
+    alert(`wins: ${score.wins}  losses: ${score.losses}`);"
+    >
+      heads
+    </button>
+    <button
+      onclick="
+         eval('tails');
+    alert(`wins: ${score.wins}  losses: ${score.losses}`);"
+    >
+      tails
+    </button>
+
+    <button
+      onclick="
+     score = {
+      wins:0,
+      losses:0
+     };
+     localStorage.setItem('score', JSON.stringify(score));"
+    >
+      Reset
+    </button>
+    <script>
+      let score = JSON.parse(localStorage.getItem("score"));
+
+      function eval(choice) {
+        const random = Math.random();
+        const result = random < 0.5 ? "heads" : "tails";
+        if (choice === result) {
+          score.wins++;
+          console.log("win");
+        } else {
+          score.losses++;
+          console.log("loss");
+        }
+
+        console.log(score);
+
+        localStorage.setItem("score", JSON.stringify(score));
+      }
+    </script>
+  </body>
+</html>

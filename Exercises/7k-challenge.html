@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7k Exercise</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      console.log(`Cart quantity: ${cartQuantity}`);
+    "
+    >
+      Show Quantity
+    </button>
+
+    <button
+      onclick="
+     addItem(1);
+    "
+    >
+      Add to Cart
+    </button>
+
+    <button
+      onclick="
+      addItem(2);
+    "
+    >
+      +2
+    </button>
+
+    <button
+      onclick="
+      addItem(3);
+    "
+    >
+      +3
+    </button>
+
+    <button
+      onclick="
+      addItem(4);
+    "
+    >
+      +4
+    </button>
+
+    <button
+      onclick="
+      addItem(5);
+    "
+    >
+      +5
+    </button>
+
+    <!-- vvv This code was changed. vvv -->
+    <button
+      onclick="
+      addItem(-1);
+    "
+    >
+      Remove from cart
+    </button>
+
+    <button
+      onclick="
+     addItem(-2);
+    "
+    >
+      -2
+    </button>
+
+    <button
+      onclick="
+      addItem(-3);
+    "
+    >
+      -3
+    </button>
+    <!-- ^^^ This code was changed. ^^^ -->
+
+    <button
+      onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+    "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cartQuantity = 0;
+
+      function addItem(number) {
+        if ((cartQuantity += number > 10)) {
+          console.log(`cart quantity : ${cartQuantity}`);
+          alert("no space for more items!");
+        }
+        if ((cartQuantity += number < 0)) {
+          console.log(`cart quantity : ${cartQuantity}`);
+          alert("not sufficient items!");
+        }
+        console.log(`cart quantity : ${cartQuantity}`);
+      }
+    </script>
+  </body>
+</html>

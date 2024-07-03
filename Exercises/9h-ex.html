@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simultaneous Typing</title>
+  </head>
+  <body>
+    <input
+      class="js-input"
+      onkeyup="
+      update(event);
+          console.log(event.key);"
+    />
+    <p class="js-output"></p>
+
+    <script>
+      function update(event) {
+        const value = event.key;
+        let word = "";
+        if (event.key === "Backspace") {
+          word = document.querySelector(".js-output").innerHTML;
+          word = word.slice(0, -1);
+          document.querySelector(".js-output").innerHTML = word;
+        } else {
+          document.querySelector(".js-output").innerHTML += value;
+        }
+      }
+    </script>
+  </body>
+</html>

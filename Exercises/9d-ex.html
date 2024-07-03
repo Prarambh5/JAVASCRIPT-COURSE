@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9d</title>
+  </head>
+  <body>
+    <input
+      class="js-input"
+      type="text"
+      onkeydown="displayNameOnkey();
+        "
+    />
+    <button onclick="displayName();">Submit</button>
+
+    <p class="js-display"></p>
+
+    <script>
+      function displayNameOnkey() {
+        if (event.key === "Enter") displayName();
+      }
+
+      function displayName() {
+        const input = document.querySelector(".js-input").value;
+        document.querySelector(
+          ".js-display"
+        ).innerHTML = `Your Name is : ${input}`;
+      }
+    </script>
+  </body>
+</html>

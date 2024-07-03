@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 7</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function greet(name = "world") {
+        console.log(`hello! ${name}`);
+      }
+      greet("prarambh");
+      greet();
+      */
+
+      /*
+      function greet(name) {
+        if (name) console.log(`hello! ${name}`);
+        else console.log("hi there");
+      }
+      greet("prarambh");
+      greet();
+      */
+
+      function convertToFahrenheit(celsius) {
+        const fahrenheit = (celsius * 9) / 5 + 32;
+        return fahrenheit;
+      }
+      console.log(`convert to fahrenheit ${convertToFahrenheit(45)}`);
+
+      function convertToCelsius(fahrenheit) {
+        const celsius = ((fahrenheit - 32) * 5) / 9;
+        return celsius;
+      }
+      console.log(`convert to celsius ${convertToCelsius(120)}`);
+    </script>
+  </body>
+</html>

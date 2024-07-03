@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+    <script>
+      /*
+const nums = [10, 20, 30, 40, 50, 60];
+      const messages = ["hi", "hello", "good"];
+      nums.pop();
+      nums.push(333);
+      const a1 = nums.slice(0, 2);
+      console.log(nums);
+      console.log(a1);
+      console.log(getLastValue(nums));
+      console.log(getLastValue(a1));
+      console.log(getLastValue(messages));
+
+      function getLastValue(arr) {
+        const index = arr.length - 1;
+        return arr[index];
+      }
+      */
+      const arr = [22, 34, 2, 56, 42, 33];
+      const names = ["lal", "gopal", "neil", "reel"];
+      const array2 = arraySwap([...arr]);
+      console.log(`names: ${arraySwap(names)}`);
+      console.log(`array: ${arr}`);
+      console.log(`array2: ${array2}`);
+      function arraySwap(array) {
+        const i = array.length - 1;
+        const x = array[i];
+        array[i] = array[0];
+        array[0] = x;
+        return array;
+      }
+    </script>
+  </body>
+</html>

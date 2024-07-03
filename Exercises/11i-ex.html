@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 11i</title>
+  </head>
+  <body>
+    <script>
+      /* (11i)
+      let myarray = [22, 33, 55, 12];
+      myarray = addNum(myarray, 100);
+      console.log(myarray);
+      function addNum(array, num) {
+        const result = [];
+        for (let i = 0; i < array.length; i++) {
+          result.push(array[i] + num);
+        }
+        return result;
+      }
+        */
+
+      function addArray(array1, array2) {
+        const result = [];
+        for (let i = 0; i < array1.length; i++) {
+          result.push(array1[i] + array2[i]);
+        }
+        return result;
+      }
+      console.log(addArray([22, 48, 34], [78, 11, 43]));
+
+      function countPositive(nums) {
+        let count = 0;
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] > 0) count++;
+        }
+        return count;
+      }
+      console.log(countPositive([-2, -45, 4, 99, 68, -9]));
+
+      function minMax(nums) {
+        const result = {
+          min: 0,
+          max: 0,
+        };
+        if (nums.length === 0) result.max = result.min = null;
+        if (nums.length === 1) result.max = result.min = nums[0];
+        for (let i = 0; i < nums.length; i++) {
+          if (nums[i] < result.min) result.min = nums[i];
+          if (nums[i] > result.max) result.max = nums[i];
+        }
+        return result;
+      }
+      console.log(minMax([3]));
+
+      function countWords(words) {
+        const result = {};
+        let variable;
+        for (let i = 0; i < words.length; i++) {
+          variable = words[i];
+          if (isNaN(result[variable])) result[variable] = 0;
+          result[variable]++;
+        }
+        return result;
+      }
+      console.log(
+        countWords([
+          "hello",
+          "hello",
+          "bhai",
+          "sahi",
+          "sahi",
+          "bhai",
+          "sahi",
+          "hello",
+        ])
+
+        //i have skipped 11j 11k. because they are easy....
+      );
+    </script>
+  </body>
+</html>
